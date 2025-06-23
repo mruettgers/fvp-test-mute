@@ -1,0 +1,44 @@
+PODS:
+  - FlutterMacOS (1.0.0)
+  - fvp (0.32.1):
+    - Flutter
+    - FlutterMacOS
+    - mdk (~> 0.33.0)
+  - mdk (0.33.0)
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - video_player_avfoundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+
+DEPENDENCIES:
+  - FlutterMacOS (from `Flutter/ephemeral`)
+  - fvp (from `Flutter/ephemeral/.symlinks/plugins/fvp/darwin`)
+  - path_provider_foundation (from `Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin`)
+  - video_player_avfoundation (from `Flutter/ephemeral/.symlinks/plugins/video_player_avfoundation/darwin`)
+
+SPEC REPOS:
+  trunk:
+    - mdk
+
+EXTERNAL SOURCES:
+  FlutterMacOS:
+    :path: Flutter/ephemeral
+  fvp:
+    :path: Flutter/ephemeral/.symlinks/plugins/fvp/darwin
+  path_provider_foundation:
+    :path: Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin
+  video_player_avfoundation:
+    :path: Flutter/ephemeral/.symlinks/plugins/video_player_avfoundation/darwin
+
+SPEC CHECKSUMS:
+  FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
+  fvp: af1c18b421753e3a538361d86f41b2d0d6f9f277
+  mdk: 7cccbeebec9a85f4e240ac14d9f603273636bb3b
+  path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46
+  video_player_avfoundation: 7c6c11d8470e1675df7397027218274b6d2360b3
+
+PODFILE CHECKSUM: 7eb978b976557c8c1cd717d8185ec483fd090a82
+
+COCOAPODS: 1.16.2
