@@ -61,7 +61,7 @@ class VideoPlayerWidgetState extends State<VideoPlayerWidget> {
         print('Muting video player (key: ${widget.key})');
         await _videoPlayerController.setVolume(0);
       }
-      _videoPlayerController.play();
+      await _videoPlayerController.play();
     });
   }
 

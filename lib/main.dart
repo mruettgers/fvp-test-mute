@@ -76,10 +76,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _buildContent() {
+    bool muted = counter % 2 != 0; // Mute every second time
+    String src = counter % 2 == 0
+        ? 'assets/videos/big-buck-bunny-1080p-30sec.mp4'
+        : 'assets/videos/1080p50audio.mp4'; // Alternate video source
     return VideoPlayerWidget(
       key: UniqueKey(),
-      muted: counter % 2 == 0, // Mute every second time
-      src: 'assets/videos/big-buck-bunny-1080p-30sec.mp4',
+      muted: muted, // Mute every second time
+      src: src,
       onCompleted: () {},
     );
   }

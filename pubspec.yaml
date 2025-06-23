@@ -37,7 +37,7 @@ dependencies:
   fvp:
     git:
       url: https://github.com/wang-bin/fvp.git
-      
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -62,6 +62,7 @@ flutter:
 
   assets:
   - assets/videos/big-buck-bunny-1080p-30sec.mp4
+  - assets/videos/1080p50audio.mp4
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
