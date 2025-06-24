@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:fvp/fvp.dart';
@@ -51,12 +50,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    // Recreate state every 3 secs
-    Timer.periodic(const Duration(seconds: 5), (timer) {
-      setState(() {
-        counter = (counter + 1);
-      });
-    });
   }
 
   @override
@@ -66,10 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
       switchInCurve: Curves.linear,
       switchOutCurve: Curves.easeIn,
       transitionBuilder: (Widget child, Animation<double> animation) {
-        return FadeTransition(
-          opacity: animation,
-          child: child,
-        );
+        return FadeTransition(opacity: animation, child: child);
       },
       child: Center(key: UniqueKey(), child: _buildContent()),
     );
@@ -77,14 +67,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildContent() {
     bool muted = counter % 2 != 0; // Mute every second time
-    String src = counter % 2 == 0
-        ? 'assets/videos/big-buck-bunny-1080p-30sec.mp4'
-        : 'assets/videos/1080p50audio.mp4'; // Alternate video source
+    String src =
+        counter % 2 == 0
+            ? 'assets/videos/big-buck-bunny-1080p-30sec.mp4'
+            : 'assets/videos/1080p50audio.mp4'; // Alternate video source
     return VideoPlayerWidget(
       key: UniqueKey(),
-      muted: muted, // Mute every second time
+      muted: muted,
       src: src,
-      onCompleted: () {},
+      onCompleted: () {
+        setState(() {
+          counter = (counter + 1);
+        });
+      },
     );
   }
 }

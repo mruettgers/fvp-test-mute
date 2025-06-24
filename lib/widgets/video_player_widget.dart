@@ -20,7 +20,6 @@ class VideoPlayerWidget extends StatefulWidget {
 class VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   late final VideoPlayerController _videoPlayerController;
   bool _isInitialized = false;
-  bool _volChecked = false;
 
   @override
   void initState() {
@@ -40,17 +39,9 @@ class VideoPlayerWidgetState extends State<VideoPlayerWidget> {
           if (_videoPlayerController.value.isCompleted &&
               _videoPlayerController.value.position >=
                   _videoPlayerController.value.duration) {
-            widget.onCompleted();
-          }
-          else if (widget.muted && !_volChecked && _videoPlayerController.value.position.inSeconds > 1) {
-            _volChecked = true;
-            print('Video player position: ${_videoPlayerController.value.position.inSeconds} / ${_videoPlayerController.value.duration.inSeconds}');
-            print('Checking volume for video player (key: ${widget.key})');
-            if (_videoPlayerController.value.volume > 0) {
-              print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-              print('Video player volume is not muted (key: ${widget.key}) although muted is set to true!!!!!');
-              print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
-            }
+            Future.delayed(const Duration(milliseconds: 1500), () {
+              widget.onCompleted();
+            });
           }
         }
       });
